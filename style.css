@@ -64,3 +64,62 @@ html {
     padding: 40px;
     scroll-margin-top: 80px; 
   }
+ /* Zero o padding na seção para encostar o fundo nas bordas da tela */
+#personagem.section {
+    padding: 0;
+  }
+  
+  /* Fundo rosa e alinhamento Flexbox */
+  #imgFundoP {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    min-height: 500px;
+    background-image: url('img/fundo-Personagem.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 40px;
+    color: #ffffff;
+  }
+  
+  /* Imagem da personagem */
+  .img-personagem {
+    max-height: 400px;
+    width: auto;
+  }
+  
+  /* Container de texto */
+  .texto-container {
+    max-width: 650px;
+    text-align: center;
+  }
+  
+  .texto-container h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+/* Estilo do parágrafo justificado */
+.texto-container p {
+    text-align: justify;       /* Justifica o texto */
+    font-size: 1.2rem;          /* Tamanho da fonte */
+    line-height: 1.6;           /* Espaçamento entre as linhas */
+    color: #ffffff;             /* Cor do texto em branco */
+    margin: 0;
+  }
+  
+  /* Imagem da flor posicionada no canto */
+  .img-flor {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    height: 60px;
+  }
