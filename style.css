@@ -64,62 +64,73 @@ html {
     padding: 40px;
     scroll-margin-top: 80px; 
   }
- /* Zero o padding na seção para encostar o fundo nas bordas da tela */
+/* Zero o padding na seção para encostar o fundo nas bordas do ecrã */
 #personagem.section {
     padding: 0;
   }
   
-  /* Fundo rosa e alinhamento Flexbox */
+  /* Fundo rosa e alinhamento central em Flexbox */
   #imgFundoP {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;                    /* Espaço entre a personagem da esquerda e o texto */
     width: 100%;
-    min-height: 500px;
+    min-height: 550px;
     background-image: url('img/fundo-Personagem.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 15px 60px 40px 60px; /* Reduzimos de 40px para 15px no topo */
     color: #ffffff;
   }
   
-  /* Imagem da personagem */
-  .img-personagem {
-    max-height: 400px;
+  /* Imagem da personagem de corpo inteiro (à esquerda) */
+  .img-personagem-principal {
+    height: 55rem;                /* Ajuste a altura conforme necessário */
     width: auto;
+    object-fit: contain;
   }
   
-  /* Container de texto */
+  /* Bloco central de texto + imagens abaixo */
   .texto-container {
-    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Centraliza o título e a imagem de variações no eixo horizontal */
+    max-width: 580px;
+  }
+  
+  /* Título Gyoran */
+  .texto-container h2 {
+    font-size: 3.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 15px 0;
     text-align: center;
   }
   
-  .texto-container h2 {
-    font-size: 2.8rem;
-    font-weight: bold;
+  /* Parágrafo de descrição justificado */
+  .texto-container p {
+    text-align: justify;         /* Alinha o texto de ponta a ponta */
+    font-size: 1.75rem;
+    line-height: 1.6;
     color: #ffffff;
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0 0 25px 0;
   }
   
-/* Estilo do parágrafo justificado */
-.texto-container p {
-    text-align: justify;       /* Justifica o texto */
-    font-size: 1.2rem;          /* Tamanho da fonte */
-    line-height: 1.6;           /* Espaçamento entre as linhas */
-    color: #ffffff;             /* Cor do texto em branco */
-    margin: 0;
+  /* Imagem com os rostos e arma (abaixo do texto) */
+  .img-variacoes {
+    max-width: 30rem;             /* Controla o tamanho das variações abaixo do texto */
+    height: auto;
   }
   
-  /* Imagem da flor posicionada no canto */
+  /* Flor posicionada no canto inferior direito */
   .img-flor {
     position: absolute;
-    bottom: 20px;
-    right: 40px;
-    height: 60px;
+    bottom: 80px; /* Aumentado (ex: de 25px para 80px) para subir a flor */
+    right: 8rem;
+    width: 8rem;
+    height: auto;
   }
