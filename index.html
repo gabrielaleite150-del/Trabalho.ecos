@@ -4,15 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecos do Oriente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
 </head>
 <body>
-    <header>
-        <img src="img/logo.png" alt="Logo do site Ecos do Oriente">
-        <button>início</button>
-        <button>Sobre o Jogo</button>
-        <button>Personagem</button>
-        <button>Mapa</button>
-        <button>Contato</button>
-    </header>
+    <header class="navbar">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logótipo Ecos do Oriente">
+        </div>
+        
+        <!-- <nav> indica aos motores de busca que esta área contém as ligações de navegação do site -->
+        <nav>
+          <ul class="nav-links">
+            <!--href aponta diretamente para a <section> que tem o id="inicio" -->
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#sobre">Sobre o jogo</a></li>
+            <li><a href="#personagem">Personagem</a></li>
+            <li><a href="#mapa">Mapa</a></li>
+    
+          </ul>
+        </nav>
+    
+      </header>
+      <!--Início-->
+      <section id="inicio" class="section">
+        <h1>Início</h1>
+      </section>
+    
+      <!-- Sobre -->
+      <section id="sobre" class="section">
+        <h2>Sobre o jogo</h2>
+      </section>
+    
+      <!-- Personagem -->
+      <section id="personagem" class="section">
+        <h2>Personagem</h2>
+      </section>
+    
+      <!-- Mapa-->
+      <section id="mapa" class="section">
+        <h2>Mapa</h2>
+      </section>
 </body>
 </html>
