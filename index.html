@@ -12,7 +12,7 @@
         <div class="logo">
           <img src="img/logo.png" alt="Logótipo Ecos do Oriente">
         </div>
-        
+
         <!-- <nav> indica aos motores de busca que esta área contém as ligações de navegação do site -->
         <nav>
           <ul class="nav-links">
@@ -21,26 +21,45 @@
             <li><a href="#sobre">Sobre o jogo</a></li>
             <li><a href="#personagem">Personagem</a></li>
             <li><a href="#mapa">Mapa</a></li>
-    
+
           </ul>
         </nav>
-    
+
       </header>
       <!--Início-->
       <section id="inicio" class="section">
-        <h1>Início</h1>
-      </section>
-    
-      <!-- Sobre -->
-      <section id="sobre" class="section">
-        <h2>Sobre o jogo</h2>
+        <div class="carrossel"> <!--Primeiro bloco de conteúdo-->
+            <img id="fundoCarrossel" src="img/imagemcarrossel.png" alt="Imagem do carrossel">
+            <img id="Personagempng" src="img/personagemcarrossel.png" alt="Personagem">
+            <div id ="conectarlogobotao">
+                <img id="logopngCarrossel" src="img/logoCarrossel.png" alt="Mapa">
+                <a href="gremio.html"><button id="jogueja">Jogue já!</button></a>
+            </div>
+        </div>
       </section>
 
+      <!-- Sobre -->
+      <section id="sobre" class="section">
+        <div class="sobre"> <!--Segundo bloco de conteúdo (sobre o jogo)-->
+            <div id="1primeiradivisao"> <!-- Divisão horizontal do primeiro bloco de conteúdo -->
+                <div id="primeiradivisaoesquerda"> <!-- Divisão vertical do primeiro bloco de conteúdo -->
+                    <h2>Sobre o Jogo</h2>
+                    <p>A missão de proteger a população da sua vila foi dada a você. Com as habilidades e o requisitos necessários, nenhuma ameaça são perigo o suficiente.</p>
+                </div>
+                <div id="primeiradivisaodireita"> 
+                    <img id="imagem.sobre" src="img/imagemcarrossel.png" alt="Imagem sobre o jogo">
+            </div>
+        </div>
+      </section>
+    
+      <!-- Personagem -->
+      <section id="personagem" class="section">
         <!-- Personagem -->
         <section id="personagem" class="section">
             <div id="imgFundoP">
             <!-- Imagem da personagem à esquerda -->
-            <img class="img-personagem" src="img/personagem-variacao.png" alt="Variações personagem">
+            
+            <img id= "personagemdamaria" src="img/personagemcarrossel.png" alt="Personagem" class="img-personagem-esquerda">
             
             <!-- Bloco de texto central -->
             <div class="texto-container">
@@ -48,16 +67,65 @@
                 <p>
                 Gyoran é a personagem central de <strong>Ecos do Oriente</strong>. Como guardiã da sua vila, ela une forças contigo para defender o seu povo contra as anomalias místicas que ameaçam a região. Armada com a sua lança de lâmina dupla e guiada por uma disciplina inabalável, Gyoran combate na linha da frente para restaurar a paz e o equilíbrio.
                 </p>
+                <img class="img-personagem" src="img/personagem-variacao.png" alt="Variações personagem">
             </div>
-        
             <!-- Detalhe decorativo -->
             <img class="img-flor" src="img/flor.png" alt="Flor detalhe">
             </div>
-        </section>
-    
+      </section>
+
       <!-- Mapa-->
       <section id="mapa" class="section">
-        <h2>Mapa</h2>
+        <div class="retangulo-topo">
+            <!-- Logo e Menu futuro -->
+        </div>
+    
+        <!-- Faixa Rosa com o conteúdo E a imagem juntas -->
+        <div class="faixa-rosa">
+            <div class="texto-rosa">
+                <h1>O MUNDO DO JOGO</h1>
+                <h2>Proteja o reino oriental</h2>
+                <h3>
+                    Sua vila e templo guarda segredos e tradições profundas.<br>
+                    Explore cenários pacíficos,<br>
+                    domine seus poderes e defenda o povo contra as ameaças que tentam,<br>
+                    quebrar a harmonia do Oriente!
+                </h3>
+            </div>
+    
+            <img src="img/mapa.jpg" alt="Mapa do Jogo" class="imagem-mapa">
+        </div>
+        
+        <!-- Faixa BRANCA (Apenas uma, com o botão e a personagem) -->
+        <div class="area-branca">
+            <a href="gremio.html"><button class="botao-saber">EM BREVE-FIQUE SABENDO</button></a>
+            <img src="img/personagem.png" alt="Personagem" class="imagem-personagem">
+        </div>
+    
+        <!-- Faixa Verde no fundo da página -->
+        <div class="retangulo-verde"></div>
       </section>
+
+      <footer class="rodape-fixo">
+        <!-- Imagem 1: Fundo -->
+        <img src="img/rodapeimg.png" alt="Fundo" class="img-fundo">
+   
+        <!-- Conteúdo sobreposto -->
+        <div class="camada-sobreposta">
+           
+            <!-- 1. Texto "SOBRE NÓS" (Topo) -->
+            <div class="textorodape">
+                <h3>SOBRE NÓS</h3>
+                <p>Jogo desenvolvido por Mariana Cardoso.
+                <br>Site desenvolvido por Gabriela Leite, Isadora Guilherme, Emanuela Gonçalves e Maria Magalhães.</p>
+            </div>
+  
+            <!-- 2. Texto de Direitos Reservados (Meio) -->
+  <p class="texto-direitos">© 2026 Ecos do Oriente. Todos os direitos reservados.</p>
+  
+  <!-- 3. Imagem de Classificação (Base) -->
+  <img src="img/idadeclassificacao.png" alt="Classificação indicativa" class="img-sobreposta">
+        </div>
+    </footer>
 </body>
 </html>

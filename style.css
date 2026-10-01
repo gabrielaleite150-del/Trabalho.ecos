@@ -1,19 +1,148 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+@font-face {
+    font-family: 'fontTitulo';
+    src: url('fonts/Shikamaru.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'fontCorpo';
+    src: url('fonts/animeace2_reg.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0; 
+  padding: 0; 
+  background-color: #f7f3e9; 
+  font-family: 'fontCorpo';
+}
+
+
+/* gabi */
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+#inicio {
+    padding: 0;
+    min-height: auto;   /* o carrossel já define a altura */
+}
+
+#fundoCarrossel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#Personagempng {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    height: 80%;
+    object-fit: contain;
+    z-index: 1;
+    animation: emergir 1s ease-in-out;      
+}
+
+#conectarlogobotao {
+    position: absolute;     
+    right: 20%;              
+    top: 50%;               
+    transform: translateY(-50%);    
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    width: 300px;
+    height: 60px;             
+    z-index: 2;               
+}
+
+#logopngCarrossel {      
+    transform: translateY(-50%);  
+    z-index: 2;
+    animation: emergir 1s ease-in-out;      
+}
+
+#jogueja {
+    position: absolute;    
+    top: 13rem;   
+    right: 10%;          
+    transform: translateY(-50%);  
+    z-index: 2;     
+    width: 20rem;
+    font-size: 3rem;
+    border-radius: 60px;
+
+    background-color: #695F22;
+    color:#373014;
+    border: 5px #373014 solid;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: emergir-dps 2s ease-in-out;
+    font-family: fontCorpo  ;
+}
+
+
+
+#jogueja:hover {
+    background-color: #849927;
+  }
+
+@keyframes emergir {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50);
+    }
+}
+
+@keyframes emergir-dps {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50);
+    }
+}
+
+  /* maria+ */
 
 html {
-    scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
+    scroll-behavior: smooth; 
     margin: 0;
     padding: 0;
-    background-color: #f7f3e9;
   }
+    
   h1{
     margin-top: 5rem;
   }
-  
-  
+
+  h2 {
+    font-family: fontTitulo;
+  }
+
   .navbar {
     position: fixed;
     top: 0;
@@ -34,7 +163,7 @@ html {
     height: 50px;
     display: block;
   }
-  
+
   .nav-links {
     list-style: none;
     display: flex;
@@ -51,14 +180,14 @@ html {
     padding-bottom: 4px;
     transition: color 0.2s, border-bottom 0.2s;
   }
-  
+
 
   .nav-links a:hover,
   .nav-links a.active {
     color: #1a2d21;
     border-bottom: 2px solid #2b4533;
   }
-  
+
   .section {
     min-height: 100vh;
     padding: 40px;
@@ -69,6 +198,12 @@ html {
     padding: 0;
   }
   
+  #personagem.section {
+    padding: 0;
+    min-height: auto;   /* adicione esta linha */
+}
+
+
   /* Fundo rosa e alinhamento Flexbox */
   #imgFundoP {
     position: relative;
@@ -77,11 +212,11 @@ html {
     justify-content: center;
     gap: 40px;
     width: 100%;
-    min-height: 500px;
+    min-height: 100vh;
+    min-height: 100vh;
     background-image: url('img/fundo-Personagem.png');
-    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     box-sizing: border-box;
     padding: 40px;
     color: #ffffff;
@@ -91,14 +226,35 @@ html {
   .img-personagem {
     max-height: 400px;
     width: auto;
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
   }
   
   /* Container de texto */
   .texto-container {
+    position: absolute;     
     max-width: 650px;
-    text-align: center;
+    right: 15%;              
+    top: 10%; 
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
   }
   
+  #personagemdamaria {
+    position: absolute;     
+    max-width: 650px;
+    left: 15%;              
+    top: 8%; 
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
   .texto-container h2 {
     font-size: 2.8rem;
     font-weight: bold;
@@ -123,3 +279,254 @@ html {
     right: 40px;
     height: 60px;
   }
+
+
+  /* izzie */
+
+  /* O rodapé vira um contêiner de Grid */
+.rodape-fixo {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: grid;
+    grid-template-areas: "sobrepor"; /* Define uma área única */
+    align-items: center;   /* Centraliza na vertical */
+    justify-items: center; /* Centraliza na horizontal */
+}
+
+/* Os dois filhos diretos vão ocupar EXATAMENTE a mesma área */
+.rodape-fixo > * {
+    grid-area: sobrepor;
+}
+
+/* 1. Imagem de fundo ajustada */
+.img-fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante preenchimento do fundo */
+    display: block;
+}
+
+/* 2. Camada com o conteúdo por cima */
+.camada-sobreposta {
+    z-index: 2; /* Garante que fique por cima da imagem de fundo */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos um abaixo do outro */
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    gap: 30px; /* Adiciona espaçamento uniforme entre os itens */
+}
+
+/* Estilo do bloco SOBRE NÓS */
+.textorodape h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    
+}
+
+.textorodape p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+/* Estilo do texto de direitos */
+.texto-direitos {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* 3. TAMANHO DA IMAGEM SOBREPOSTA (Abaixo de tudo) */
+.img-sobreposta {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 100px;
+    margin-top: 5px; /* Espaço em relação ao texto acima */
+}
+
+/* emanula */
+
+#mapa {
+    padding: 0;
+    min-height: auto;   /* o carrossel já define a altura */
+}  
+  .faixa-rosa {
+    width: 100%;
+    background-color: #f7ccd3;
+    background-image: url('img/textura-rosa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .texto-rosa {
+    margin-top: -10rem;
+    max-width: 50%;
+    color: rgb(41, 16, 22);
+
+    animation: subir ease-in-out;
+    animation-timeline: view(block 10% 0%)
+  }
+
+  .texto-rosa h2 {
+    font-family: fontCorpo;
+    font-size: 2rem;
+  }
+
+  .texto-rosa h1 {
+    font-family: fontTitulo;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .imagem-mapa {
+    width: 50rem;
+    height: auto;
+    border-radius: 1rem;
+    margin-top: 8rem;
+    margin-left: 6rem;
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+  
+  .area-branca {
+    width: 100%;
+    background-color: #fffceb;
+    min-height: 9rem;
+    position: relative; /* Serve para prender a personagem aqui dentro */
+  }
+  
+  .botao-saber {
+    background-color: #355643;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 25rem;
+    margin-top: 2.9rem;
+
+    animation: subir ease-in-out;
+    animation-timeline: view(block 10% 0%)
+  }
+  
+  .botao-saber:hover {
+    background-color: #9cb151;
+  }
+  
+  .imagem-personagem {
+    position: absolute;
+    bottom: -150px; 
+    left: 0;
+    height: 33rem;
+    width: auto;
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+  
+  .retangulo-verde {
+    width: 100%;
+    height: 9rem;
+    background-color: #b6c66e;
+  }  
+
+
+  /* sobre */
+
+  #sobre.section {
+    padding: 0;
+    min-height: auto;   /* adicione esta linha */
+}
+
+
+  /* Fundo rosa e alinhamento Flexbox */
+  .sobre {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100vh;
+    background-image: url('img/fundo.sobre.png');
+    background-position: center;
+    background-repeat: repeat-y;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+  
+  
+  /* Container de texto */
+  #primeiradivisaoesquerda {
+    position: absolute;     
+    max-width: 650px;
+    right: 10%;              
+    top: 25%; 
+
+    animation: subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
+  #primeiradivisaoesquerda h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  #primeiradivisaoesquerda p {
+    text-align: justify;       /* Justifica o texto */
+    font-size: 2rem;          /* Tamanho da fonte */
+    line-height: 1.6;           /* Espaçamento entre as linhas */
+    color: #c1ddb1;             /* Cor do texto em branco */
+    margin: 0;
+  }
+
+  #primeiradivisaodireita > img{
+    position: absolute;     
+    max-width: 50rem;
+    left: 5%;              
+    top: 20%;
+    border-radius: 10px;
+    border: 15px #ceba8f solid;
+    animation: 0.5s subir ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
+
+
+
+  /* macumba */
+
+  @keyframes subir {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
