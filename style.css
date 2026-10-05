@@ -23,6 +23,9 @@ body {
   font-family: 'fontCorpo';
 }
 
+/* partes basicas (animações */
+
+
 
 /* gabi */
 .carrossel {
@@ -523,7 +526,7 @@ html {
   @keyframes subir {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(150px);
     }
     100% {
         opacity: 1;
